@@ -3,6 +3,7 @@ import Header from "./component/Header"
 import Footer from "./component/Footer"
 import Layout from "./component/Layout"
 import Hero from "./component/Outlet/Hero"
+import About from "./component/Outlet/About"
 
 
 function App() {
@@ -14,7 +15,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout/>}>
     <Route path="" element={<Hero/>}/>
-    <Route path="/about" element={<Hero/>}/>
+    <Route path="/about" element={<About/>}/>
     <Route path="/features" element={<Hero/>}/>
     <Route path="/pricing" element={<Hero/>}/>
     <Route path="/blog" element={<Hero/>}/>

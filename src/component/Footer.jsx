@@ -12,7 +12,28 @@ const Footer = () => {
                         Deliver instant, Human like support with our AI assistant
                     </p>
                     <Stack direction='row' gap={1}>
-                        <TextField placeholder='Your Email Address' /><Button>Subscribe</Button>
+                        <TextField
+  placeholder="Your Email Address"
+  variant="outlined"
+  InputProps={{
+    style: { color: "white" }, // text color
+  }}
+  sx={{
+    "& .MuiOutlinedInput-root": {
+      "& fieldset": {
+        borderColor: "white", // default border
+      },
+      "&:hover fieldset": {
+        borderColor: "white", // hover border
+      },
+      "&.Mui-focused fieldset": {
+        borderColor: "white", // focused border
+      },
+    },
+    input: { color: "white" }, // input text color
+  }}
+/><Button className='!text-white !bg-emerald-500'>
+Subscribe</Button>
                     </Stack>
                 </div >
                 <div className='flex flex-col  gap-2 justify-items-start'>
