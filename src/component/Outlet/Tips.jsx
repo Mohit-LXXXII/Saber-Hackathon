@@ -47,19 +47,19 @@ const Tips = () => {
       title: 'Reduce Shower Time',
       description:
         'Cut your shower time by a few minutes to save gallons of water daily. Use a low-flow showerhead to maximize efficiency.',
-      image: 'https://images.unsplash.com/photo-1508345226487-6723e1c89518?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80',
+      image: 'https://www.tolosauna.com/wp-content/uploads/2019/12/rain-shower-3-1.jpg',
     },
     {
       title: 'Fix Leaks Promptly',
       description:
         'A small leak can waste hundreds of liters monthly. Regularly check faucets and pipes to ensure every drop is conserved.',
-      image: 'https://images.unsplash.com/photo-1598906145290-6e5b4a9b9d9c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80',
+      image: 'https://pugetsoundplumbing.com/wp-content/uploads/2018/06/Water-running-from-faucet.jpg',
     },
     {
       title: 'Use Efficient Appliances',
       description:
         'Choose water-efficient dishwashers and washing machines to reduce usage while maintaining performance for daily tasks.',
-      image: 'https://images.unsplash.com/photo-1536935338788-73bf0a995c74?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80',
+      image: 'https://tse1.mm.bing.net/th/id/OIP.fdBe_Lc0YlXy0JdZYl9_5QHaEH?r=0&w=900&h=500&rs=1&pid=ImgDetMain&o=7&rm=3',
     },
   ];
 

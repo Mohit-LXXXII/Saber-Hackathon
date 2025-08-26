@@ -121,7 +121,7 @@ const Hero = () => {
           <motion.div
             className="h-64 bg-cover bg-center rounded-2xl shadow-md hover:scale-105 transition-transform duration-300"
             style={{
-              backgroundImage: `url("https://images.unsplash.com/photo-1513553404607-2d9132f71f2f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80")`,
+              backgroundImage: `url("https://images.hdqwalls.com/wallpapers/water-drop-closeup-macro-4k-1x.jpg")`,
             }}
             initial={{ opacity: 0, translateX: -50 }}
             animate={isCardsVisible ? { opacity: 1, translateX: 0 } : {}}
@@ -133,7 +133,7 @@ const Hero = () => {
         <motion.div
           className="h-full bg-cover bg-center rounded-2xl shadow-md hover:scale-105 transition-transform duration-300"
           style={{
-            backgroundImage: `url("https://images.unsplash.com/photo-1513553404607-2d9132f71f2f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80")`,
+            backgroundImage: `url("https://images.alphacoders.com/739/73931.jpg")`,
           }}
           initial={{ opacity: 0, translateY: 50 }}
           animate={isCardsVisible ? { opacity: 1, translateY: 0 } : {}}
@@ -150,7 +150,7 @@ const Hero = () => {
           <motion.div
             className="h-64 bg-cover bg-center rounded-2xl shadow-md hover:scale-105 transition-transform duration-300"
             style={{
-              backgroundImage: `url("https://images.unsplash.com/photo-1513553404607-2d9132f71f2f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80")`,
+              backgroundImage: `url("https://tse1.mm.bing.net/th/id/OIP.grjtVHUTZyT7jutyMPmf6wHaEo?r=0&rs=1&pid=ImgDetMain&o=7&rm=3")`,
             }}
             initial={{ opacity: 0, translateX: 50 }}
             animate={isCardsVisible ? { opacity: 1, translateX: 0 } : {}}

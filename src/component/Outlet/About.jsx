@@ -83,7 +83,7 @@ const About = () => {
           <div
             className="w-full sm:w-1/2 h-48 bg-cover bg-center rounded-xl"
             style={{
-              backgroundImage: `url("https://images.unsplash.com/photo-1513553404607-2d9132f71f2f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80")`,
+              backgroundImage: `url("https://d9s8a5p4.rocketcdn.me/wp-content/uploads/sites/3/2019/03/nanostationsmartphone_splash-Profile-image-1024x1024.jpg")`,
             }}
           ></div>
           <div className="w-full sm:w-1/2 flex flex-col gap-2">
@@ -99,7 +99,7 @@ const About = () => {
           <div
             className="w-full sm:w-1/2 h-48 bg-cover bg-center rounded-xl"
             style={{
-              backgroundImage: `url("https://images.unsplash.com/photo-1513553404607-2d9132f71f2f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80")`,
+              backgroundImage: `url("https://img.freepik.com/premium-photo/sustainable-water-conservation-smart-irrigation-technology-ecofriendly-setting-concept-water-conservation-smart-irrigation-sustainable-technology-ecofriendly-practices_918839-243633.jpg?w=1480")`,
             }}
           ></div>
           <div className="w-full sm:w-1/2 flex flex-col gap-2">
@@ -115,7 +115,7 @@ const About = () => {
           <div
             className="w-full sm:w-1/2 h-48 bg-cover bg-center rounded-xl"
             style={{
-              backgroundImage: `url("https://images.unsplash.com/photo-1513553404607-2d9132f71f2f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80")`,
+              backgroundImage: `url("https://climatewaterequity.org/sites/default/files/clean-water-advocacy.jpg")`,
             }}
           ></div>
           <div className="w-full sm:w-1/2 flex flex-col gap-2">
@@ -131,7 +131,7 @@ const About = () => {
           <div
             className="w-full sm:w-1/2 h-48 bg-cover bg-center rounded-xl"
             style={{
-              backgroundImage: `url("https://images.unsplash.com/photo-1513553404607-2d9132f71f2f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80")`,
+              backgroundImage: `url("https://as1.ftcdn.net/v2/jpg/10/15/68/10/1000_F_1015681036_x5N9nOhkflhcwKfRLRm5aT8rdqHvKKkq.jpg")`,
             }}
           ></div>
           <div className="w-full sm:w-1/2 flex flex-col gap-2">

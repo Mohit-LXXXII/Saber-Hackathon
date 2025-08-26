@@ -99,7 +99,7 @@ const Gallery = () => {
           <motion.div
             className="w-full md:w-[50%] bg-cover bg-center rounded-xl shadow-md hover:scale-105 transition-transform duration-300"
             style={{
-              backgroundImage: `url("https://images.wallpapersden.com/image/download/hd-pc-cool_bmhmbGyUmZqaraWkpJRmbmdlrWZlbWU.jpg")`,
+              backgroundImage: `url("https://5.imimg.com/data5/RT/UJ/MY-5455890/real-time-water-quality-monitoring-system--500x500.jpg")`,
             }}
             initial={{ opacity: 0, translateX: 50 }}
             animate={isTopSectionVisible ? { opacity: 1, translateX: 0 } : {}}
@@ -109,13 +109,13 @@ const Gallery = () => {
 
         {/* Bottom Section: Image Gallery */}
         <div
-          className="flex flex-col sm:flex-row justify-around p-4 h-[8rem] sm:h-[50vmin] gap-4 rounded-xl"
+          className="flex flex-col sm:flex-row justify-around p-4 h-[20vmin] sm:h-[50vmin] gap-4 rounded-xl"
           ref={bottomSectionRef}
         >
           <motion.div
-            className="w-full sm:w-[33%] bg-cover bg-center rounded-xl shadow-md hover:scale-105 transition-transform duration-300"
+            className="w-full sm:w-[33%] bg-cover  bg-center rounded-xl shadow-md hover:scale-105 transition-transform duration-300"
             style={{
-              backgroundImage: `url("https://images.wallpapersden.com/image/download/hd-pc-cool_bmhmbGyUmZqaraWkpJRmbmdlrWZlbWU.jpg")`,
+              backgroundImage: `url("https://tse2.mm.bing.net/th/id/OIP.DGH1f8k2fJ3DHhBk3TnA7AHaE8?r=0&rs=1&pid=ImgDetMain&o=7&rm=3")`,
             }}
             initial={{ opacity: 0, scale: 0.9 }}
             animate={isBottomSectionVisible ? { opacity: 1, scale: 1 } : {}}
@@ -124,7 +124,7 @@ const Gallery = () => {
           <motion.div
             className="w-full sm:w-[33%] bg-cover bg-center rounded-xl shadow-md hover:scale-105 transition-transform duration-300"
             style={{
-              backgroundImage: `url("https://images.wallpapersden.com/image/download/hd-pc-cool_bmhmbGyUmZqaraWkpJRmbmdlrWZlbWU.jpg")`,
+              backgroundImage: `url("https://th.bing.com/th/id/R.1cbd2e63e265c6343de8b19c08b640de?rik=sQYUMo04skhv4g&riu=http%3a%2f%2fwww.pixelstalk.net%2fwp-content%2fuploads%2f2016%2f04%2fNature-Water-Wallpapers-Desktop-download.jpg&ehk=AQf%2bX%2bpslN4pvCpGHvybOW0CgyFpq7Ur%2bvp2HaQmW9c%3d&risl=&pid=ImgRaw&r=0")`,
             }}
             initial={{ opacity: 0, scale: 0.9 }}
             animate={isBottomSectionVisible ? { opacity: 1, scale: 1 } : {}}
@@ -133,7 +133,7 @@ const Gallery = () => {
           <motion.div
             className="w-full sm:w-[33%] bg-cover bg-center rounded-xl shadow-md hover:scale-105 transition-transform duration-300"
             style={{
-              backgroundImage: `url("https://images.wallpapersden.com/image/download/hd-pc-cool_bmhmbGyUmZqaraWkpJRmbmdlrWZlbWU.jpg")`,
+              backgroundImage: `url("https://tse4.mm.bing.net/th/id/OIP.d8ppNfHucFcvb69ZVail8AHaE8?r=0&rs=1&pid=ImgDetMain&o=7&rm=3")`,
             }}
             initial={{ opacity: 0, scale: 0.9 }}
             animate={isBottomSectionVisible ? { opacity: 1, scale: 1 } : {}}
