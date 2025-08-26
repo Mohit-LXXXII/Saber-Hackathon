@@ -1,5 +1,6 @@
+// ```jsx
 import React, { useEffect, useRef, useState } from 'react';
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 
 const Hero = () => {
   // State for scroll progress
@@ -70,26 +71,26 @@ const Hero = () => {
         className="max-w-3xl mx-auto text-center mb-12"
         ref={textRef}
         initial={{ opacity: 0, translateY: 50 }} // On-start: fade in and slide up
-        animate={isTextVisible ? { opacity: 1, translateY: 0 } : {}} // Reveal on scroll
+        animate={isTextVisible ? { opacity: 1, translateY: 0 } : {}}
         transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
       >
         <motion.h1
           className="text-3xl sm:text-4xl md:text-5xl font-bold text-emerald-700 mb-6 tracking-tight"
-          initial={{ opacity: 0, scale: 0.9 }} // On-start: slight scale-up effect
+          initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          A Little Journey About Benton
+          Every Drop Counts
         </motion.h1>
         <div className="space-y-4 text-gray-600">
           {[
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores illo id, ex rerum quaerat aspernatur temporibus incidunt earum esse a! Fugit expedita sunt iure dignissimos?',
-            'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora enim error, quam laudantium neque magni voluptatem suscipit dolor sint iure ducimus, eos sed ab nobis.',
+            'Our water tracker empowers you to monitor daily water usage, from drinking to showering, helping you make informed choices to conserve water and combat the global water crisis.',
+            'At BlueDrop, we’re dedicated to sustainable water management, providing tools that enable communities worldwide to reduce waste and ensure equitable access to this vital resource.',
           ].map((text, index) => (
             <motion.p
               key={index}
               className="text-base sm:text-lg md:text-xl leading-relaxed"
-              initial={{ opacity: 0, translateX: index % 2 === 0 ? -50 : 50 }} // On-start: slide from left/right
+              initial={{ opacity: 0, translateX: index % 2 === 0 ? -50 : 50 }}
               animate={isTextVisible ? { opacity: 1, translateX: 0 } : {}}
               transition={{ duration: 0.8, delay: index * 0.3 }}
             >
@@ -104,7 +105,7 @@ const Hero = () => {
         {/* Card 1 */}
         <motion.div
           className="flex flex-col gap-4"
-          initial={{ opacity: 0, translateY: 50 }} // On-start: fade in and slide up
+          initial={{ opacity: 0, translateY: 50 }}
           animate={isCardsVisible ? { opacity: 1, translateY: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
@@ -114,13 +115,13 @@ const Hero = () => {
             animate={isCardsVisible ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            <h2 className="text-2xl sm:text-3xl font-bold">10X</h2>
-            <p className="text-sm sm:text-base">We help businesses profit 10x more than before</p>
+            <h2 className="text-2xl sm:text-3xl font-bold">10L</h2>
+            <p className="text-sm sm:text-base">We help to save up to 10L water through our water tracker</p>
           </motion.div>
           <motion.div
             className="h-64 bg-cover bg-center rounded-2xl shadow-md hover:scale-105 transition-transform duration-300"
             style={{
-              backgroundImage: `url("https://images.wallpapersden.com/image/download/monkey-luffy-4k-one-piece-2024-art_bmdubGaUmZqaraWkpJRobWllrWdma2U.jpg")`,
+              backgroundImage: `url("https://images.unsplash.com/photo-1513553404607-2d9132f71f2f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80")`,
             }}
             initial={{ opacity: 0, translateX: -50 }}
             animate={isCardsVisible ? { opacity: 1, translateX: 0 } : {}}
@@ -132,7 +133,7 @@ const Hero = () => {
         <motion.div
           className="h-full bg-cover bg-center rounded-2xl shadow-md hover:scale-105 transition-transform duration-300"
           style={{
-            backgroundImage: `url("https://images.wallpapersden.com/image/download/monkey-luffy-4k-one-piece-2024-art_bmdubGaUmZqaraWkpJRobWllrWdma2U.jpg")`,
+            backgroundImage: `url("https://images.unsplash.com/photo-1513553404607-2d9132f71f2f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80")`,
           }}
           initial={{ opacity: 0, translateY: 50 }}
           animate={isCardsVisible ? { opacity: 1, translateY: 0 } : {}}
@@ -149,7 +150,7 @@ const Hero = () => {
           <motion.div
             className="h-64 bg-cover bg-center rounded-2xl shadow-md hover:scale-105 transition-transform duration-300"
             style={{
-              backgroundImage: `url("https://images.wallpapersden.com/image/download/monkey-luffy-4k-one-piece-2024-art_bmdubGaUmZqaraWkpJRobWllrWdma2U.jpg")`,
+              backgroundImage: `url("https://images.unsplash.com/photo-1513553404607-2d9132f71f2f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80")`,
             }}
             initial={{ opacity: 0, translateX: 50 }}
             animate={isCardsVisible ? { opacity: 1, translateX: 0 } : {}}

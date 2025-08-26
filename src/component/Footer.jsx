@@ -34,7 +34,7 @@ const Footer = () => {
   }, []);
 
   // Navigation links
-  const navLinks = ['Home', 'About', 'Features', 'Pricing', 'Blog'];
+  const navLinks = ['Home', 'About', 'Features', 'Tips', 'Blog'];
   // Support links (replacing duplicate Quick Links)
   const supportLinks = ['Contact', 'Support', 'FAQ', 'Terms', 'Privacy'];
 
@@ -61,7 +61,7 @@ const Footer = () => {
             animate={isInfoVisible ? { opacity: 1, translateX: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            Benton
+            BlueDrop
           </motion.h1>
           <motion.p
             className="text-white text-sm sm:text-base md:text-lg leading-relaxed"
@@ -69,7 +69,7 @@ const Footer = () => {
             animate={isInfoVisible ? { opacity: 1, translateX: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            Deliver instant, Human-like support with our AI assistant
+            Delivers water tracking platform 
           </motion.p>
           <motion.div
             className="flex flex-col sm:flex-row gap-2"

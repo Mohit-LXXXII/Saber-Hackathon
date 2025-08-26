@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { motion, animate } from 'motion/react';
+import { motion } from 'framer-motion';
 import CloudIcon from '@mui/icons-material/Cloud';
 import CycloneIcon from '@mui/icons-material/Cyclone';
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
@@ -32,11 +32,11 @@ const About = () => {
 
   // Trusted By items array
   const trustedByItems = [
-    { icon: <CloudIcon className="text-emerald-600" />, name: 'CloudWatch' },
-    { icon: <CycloneIcon className="text-emerald-600" />, name: 'Nietzsche' },
-    { icon: <AutoAwesomeIcon className="text-emerald-600" />, name: 'Auto Corp' },
-    { icon: <IncompleteCircleIcon className="text-emerald-600" />, name: 'CraftGram' },
-    { icon: <OilBarrelIcon className="text-emerald-600" />, name: 'Epicurious' },
+    { icon: <CloudIcon className="text-blue-600" />, name: 'AquaTrust' },
+    { icon: <CycloneIcon className="text-blue-600" />, name: 'HydroForce' },
+    { icon: <AutoAwesomeIcon className="text-blue-600" />, name: 'WaterWise' },
+    { icon: <IncompleteCircleIcon className="text-blue-600" />, name: 'PureFlow' },
+    { icon: <OilBarrelIcon className="text-blue-600" />, name: 'EcoWave' },
   ];
 
   return (
@@ -44,7 +44,7 @@ const About = () => {
       {/* Trusted By Section */}
       <div className="max-w-5xl mx-auto text-center mb-12" ref={sectionRef}>
         <p className="text-lg sm:text-xl text-gray-600 mb-6">
-          Trusted by 10,000+ founders & business owners
+          Trusted by 10,000+ environmental organizations & communities
         </p>
         <div className="flex flex-wrap justify-center gap-6 sm:gap-8 text-lg sm:text-xl font-semibold text-gray-800">
           {trustedByItems.map((item, index) => (
@@ -68,11 +68,11 @@ const About = () => {
 
       {/* Headline Section */}
       <div className="max-w-3xl mx-auto text-center mb-16">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-emerald-900 mb-4 tracking-tight">
-          Benton Helps Startups Automate Customer Interactions
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-blue-900 mb-4 tracking-tight">
+          Addressing the Global Water Crisis with Innovative Solutions
         </h1>
         <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
-          From onboarding to real-time support, Benton uses conversational AI to reduce workload and keep customers engaged.
+          Our platform leverages advanced technology to monitor, manage, and conserve water resources, ensuring sustainable access for communities worldwide.
         </p>
       </div>
 
@@ -83,13 +83,13 @@ const About = () => {
           <div
             className="w-full sm:w-1/2 h-48 bg-cover bg-center rounded-xl"
             style={{
-              backgroundImage: `url("https://images.wallpapersden.com/image/download/monkey-luffy-4k-one-piece-2024-art_bmdubGaUmZqaraWkpJRobWllrWdma2U.jpg")`,
+              backgroundImage: `url("https://images.unsplash.com/photo-1513553404607-2d9132f71f2f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80")`,
             }}
           ></div>
           <div className="w-full sm:w-1/2 flex flex-col gap-2">
-            <h2 className="text-xl sm:text-2xl font-semibold text-gray-800">Smart Adaptive Learning</h2>
+            <h2 className="text-xl sm:text-2xl font-semibold text-gray-800">Real-Time Water Monitoring</h2>
             <p className="text-sm sm:text-base text-gray-600">
-              AI that evolves with your data, continuously improving performance and adapting to new patterns.
+              Advanced sensors and AI track water quality and usage, providing instant insights to prevent waste and contamination.
             </p>
           </div>
         </div>
@@ -99,13 +99,13 @@ const About = () => {
           <div
             className="w-full sm:w-1/2 h-48 bg-cover bg-center rounded-xl"
             style={{
-              backgroundImage: `url("https://images.wallpapersden.com/image/download/monkey-luffy-4k-one-piece-2024-art_bmdubGaUmZqaraWkpJRobWllrWdma2U.jpg")`,
+              backgroundImage: `url("https://images.unsplash.com/photo-1513553404607-2d9132f71f2f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80")`,
             }}
           ></div>
           <div className="w-full sm:w-1/2 flex flex-col gap-2">
-            <h2 className="text-xl sm:text-2xl font-semibold text-gray-800">Smart Adaptive Learning</h2>
+            <h2 className="text-xl sm:text-2xl font-semibold text-gray-800">Smart Conservation Tools</h2>
             <p className="text-sm sm:text-base text-gray-600">
-              AI that evolves with your data, continuously improving performance and adapting to new patterns.
+              AI-driven analytics optimize water distribution, reducing waste and ensuring equitable access for all.
             </p>
           </div>
         </div>
@@ -115,13 +115,13 @@ const About = () => {
           <div
             className="w-full sm:w-1/2 h-48 bg-cover bg-center rounded-xl"
             style={{
-              backgroundImage: `url("https://images.wallpapersden.com/image/download/monkey-luffy-4k-one-piece-2024-art_bmdubGaUmZqaraWkpJRobWllrWdma2U.jpg")`,
+              backgroundImage: `url("https://images.unsplash.com/photo-1513553404607-2d9132f71f2f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80")`,
             }}
           ></div>
           <div className="w-full sm:w-1/2 flex flex-col gap-2">
-            <h2 className="text-xl sm:text-2xl font-semibold text-gray-800">Smart Adaptive Learning</h2>
+            <h2 className="text-xl sm:text-2xl font-semibold text-gray-800">Community Empowerment</h2>
             <p className="text-sm sm:text-base text-gray-600">
-              AI that evolves with your data, continuously improving performance and adapting to new patterns.
+              Educational tools and real-time data empower communities to manage their water resources sustainably.
             </p>
           </div>
         </div>
@@ -131,13 +131,13 @@ const About = () => {
           <div
             className="w-full sm:w-1/2 h-48 bg-cover bg-center rounded-xl"
             style={{
-              backgroundImage: `url("https://images.wallpapersden.com/image/download/monkey-luffy-4k-one-piece-2024-art_bmdubGaUmZqaraWkpJRobWllrWdma2U.jpg")`,
+              backgroundImage: `url("https://images.unsplash.com/photo-1513553404607-2d9132f71f2f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80")`,
             }}
           ></div>
           <div className="w-full sm:w-1/2 flex flex-col gap-2">
-            <h2 className="text-xl sm:text-2xl font-semibold text-gray-800">Smart Adaptive Learning</h2>
+            <h2 className="text-xl sm:text-2xl font-semibold text-gray-800">Global Impact Analytics</h2>
             <p className="text-sm sm:text-base text-gray-600">
-              AI that evolves with your data, continuously improving performance and adapting to new patterns.
+              Track and measure the impact of water conservation efforts globally with comprehensive data dashboards.
             </p>
           </div>
         </div>
