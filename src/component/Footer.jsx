@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { motion } from 'motion/react';
-import { Button, Stack, TextField } from '@mui/material';
+import { motion } from 'framer-motion';
+import { Button, Stack, TextField, Typography } from '@mui/material';
+import axios from 'axios';
 
 const Footer = () => {
   // State for reveal animations
@@ -8,6 +9,11 @@ const Footer = () => {
   const [isLinksVisible, setIsLinksVisible] = useState(false);
   const infoRef = useRef(null);
   const linksRef = useRef(null);
+
+  // State for subscribe form
+  const [email, setEmail] = useState('');
+  const [responseMessage, setResponseMessage] = useState('');
+  const [submitted, setSubmitted] = useState(false);
 
   // Intersection Observer for reveal animations
   useEffect(() => {
@@ -24,7 +30,7 @@ const Footer = () => {
           }
         });
       },
-      { threshold: 0.2 } // Trigger when 20% of element is visible
+      { threshold: 0.2 }
     );
 
     if (infoRef.current) observer.observe(infoRef.current);
@@ -33,15 +39,39 @@ const Footer = () => {
     return () => observer.disconnect();
   }, []);
 
+  // Handle form submission
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post('http://localhost:8080/api/subscribe', {
+        email
+      });
+      setResponseMessage(response.data);
+      setSubmitted(true);
+      setEmail('');
+      setTimeout(() => {
+        setSubmitted(false);
+        setResponseMessage('');
+      }, 5000);
+    } catch (error) {
+      setResponseMessage(error.response?.data || 'Error: Failed to subscribe');
+      setSubmitted(true);
+      setTimeout(() => {
+        setSubmitted(false);
+        setResponseMessage('');
+      }, 5000);
+    }
+  };
+
   // Navigation links
   const navLinks = ['Home', 'About', 'Features', 'Tips', 'Blog'];
-  // Support links (replacing duplicate Quick Links)
+  // Support links
   const supportLinks = ['Contact', 'Support', 'FAQ', 'Terms', 'Privacy'];
 
   return (
     <motion.section
       className="w-full min-h-[auto] bg-gray-900 px-4 sm:px-6 md:px-8 lg:px-10 py-6 sm:py-8 md:py-10 flex flex-col gap-6"
-      initial={{ opacity: 0, translateY: 50 }} // On-start: fade in and slide up
+      initial={{ opacity: 0, translateY: 50 }}
       animate={{ opacity: 1, translateY: 0 }}
       transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
     >
@@ -53,7 +83,7 @@ const Footer = () => {
         animate={isInfoVisible ? { opacity: 1, translateY: 0 } : {}}
         transition={{ duration: 0.8, delay: 0.2 }}
       >
-        {/* Benton Info and Form */}
+        {/* BlueDrop Info and Form */}
         <div className="flex flex-col gap-4 w-full md:w-1/3">
           <motion.h1
             className="text-white text-2xl sm:text-3xl md:text-4xl font-bold"
@@ -69,7 +99,7 @@ const Footer = () => {
             animate={isInfoVisible ? { opacity: 1, translateX: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            Delivers water tracking platform 
+            Delivers water tracking platform
           </motion.p>
           <motion.div
             className="flex flex-col sm:flex-row gap-2"
@@ -77,35 +107,61 @@ const Footer = () => {
             animate={isInfoVisible ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 0.6, delay: 0.5 }}
           >
-            <TextField
-              placeholder="Your Email Address"
-              variant="outlined"
-              InputProps={{
-                style: { color: 'white', fontSize: '0.875rem' }, // Responsive text size
-              }}
-              sx={{
-                '& .MuiOutlinedInput-root': {
-                  '& fieldset': { borderColor: 'white' },
-                  '&:hover fieldset': { borderColor: 'white' },
-                  '&.Mui-focused fieldset': { borderColor: 'white' },
-                  width: { xs: '100%', sm: '70%' }, // Responsive width
-                },
-                input: { color: 'white' },
-              }}
-            />
-            <Button
-              variant="contained"
-              sx={{
-                backgroundColor: '#10b981', // emerald-500
-                color: 'white',
-                fontSize: { xs: '0.75rem', sm: '0.875rem' }, // Responsive font size
-                textTransform: 'none',
-                '&:hover': { backgroundColor: '#059669' }, // emerald-600
-                padding: { xs: '8px 16px', sm: '10px 20px' },
-              }}
-            >
-              Subscribe
-            </Button>
+            <form onSubmit={handleSubmit}>
+              <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2}>
+                <TextField
+                  placeholder="Your Email Address"
+                  variant="outlined"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                  type="email"
+                  InputProps={{
+                    style: { color: 'white', fontSize: '0.875rem' },
+                  }}
+                  sx={{
+                    '& .MuiOutlinedInput-root': {
+                      '& fieldset': { borderColor: 'white' },
+                      '&:hover fieldset': { borderColor: 'white' },
+                      '&.Mui-focused fieldset': { borderColor: 'white' },
+                      width: { xs: '100%', sm: '70%' },
+                    },
+                    input: { color: 'white' },
+                  }}
+                />
+                <Button
+                  type="submit"
+                  variant="contained"
+                  sx={{
+                    backgroundColor: '#10b981',
+                    color: 'white',
+                    fontSize: { xs: '0.75rem', sm: '0.875rem' },
+                    textTransform: 'none',
+                    '&:hover': { backgroundColor: '#059669' },
+                    padding: { xs: '8px 16px', sm: '10px 20px' },
+                  }}
+                >
+                  Subscribe
+                </Button>
+              </Stack>
+            </form>
+            {submitted && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5 }}
+              >
+                <Typography
+                  variant="body2"
+                  sx={{
+                    color: responseMessage.includes('Error') || responseMessage.includes('failed') ? '#d32f2f' : '#059669',
+                    mt: 2,
+                  }}
+                >
+                  {responseMessage || 'Subscribed successfully!'}
+                </Typography>
+              </motion.div>
+            )}
           </motion.div>
         </div>
 

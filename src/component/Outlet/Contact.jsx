@@ -1,7 +1,7 @@
-// ```jsx
 import React, { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { TextField, Button, Typography, Box } from '@mui/material';
+import axios from 'axios';
 
 const Contact = () => {
   // State for reveal animations
@@ -17,6 +17,7 @@ const Contact = () => {
     message: '',
   });
   const [submitted, setSubmitted] = useState(false);
+  const [responseMessage, setResponseMessage] = useState('');
 
   // Intersection Observer for reveal animations
   useEffect(() => {
@@ -49,12 +50,41 @@ const Contact = () => {
   };
 
   // Handle form submission
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Simulate form submission (replace with API call if needed)
-    setSubmitted(true);
-    setFormData({ name: '', email: '', message: '' });
-    setTimeout(() => setSubmitted(false), 3000); // Reset message after 3s
+    
+    // Optional: Validate email to ensure it's a Gmail address
+    if (!formData.email.toLowerCase().endsWith('@gmail.com')) {
+      setResponseMessage('Error: Please use a Gmail address');
+      setSubmitted(true);
+      setTimeout(() => {
+        setSubmitted(false);
+        setResponseMessage('');
+      }, 3000);
+      return;
+    }
+
+    try {
+      const response = await axios.post('http://localhost:8080/api/message', {
+        name: formData.name,
+        email: formData.email,
+        message: formData.message,
+      });
+      setResponseMessage(response.data); // Should be "Message received successfully!"
+      setSubmitted(true);
+      setFormData({ name: '', email: '', message: '' });
+      setTimeout(() => {
+        setSubmitted(false);
+        setResponseMessage('');
+      }, 3000);
+    } catch (error) {
+      setResponseMessage('Error: Failed to send message. Please try again.');
+      setSubmitted(true);
+      setTimeout(() => {
+        setSubmitted(false);
+        setResponseMessage('');
+      }, 3000);
+    }
   };
 
   return (
@@ -86,9 +116,9 @@ const Contact = () => {
         {submitted ? (
           <Typography
             variant="h6"
-            sx={{ color: '#059669', textAlign: 'center', mb: 4 }}
+            sx={{ color: responseMessage.includes('Error') ? '#d32f2f' : '#059669', textAlign: 'center', mb: 4 }}
           >
-            Thank you for your message! We'll get back to you soon.
+            {responseMessage || "Thank you for your message! We'll get back to you soon."}
           </Typography>
         ) : (
           <Box
