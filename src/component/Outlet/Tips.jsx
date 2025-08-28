@@ -110,7 +110,47 @@ const Tips = () => {
             />
           </motion.div>
         ))}
+        <motion.div
+  className="w-full bg-gradient-to-b from-blue-100 to-emerald-100 flex flex-col items-center justify-center min-h-[70vh]"
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  exit={{ opacity: 0 }}
+  transition={{ duration: 0.5 }}
+>
+  <div className="text-center max-w-3xl mx-auto px-4">
+    <motion.iframe
+      className="w-full max-w-md rounded-lg shadow-md aspect-video mx-auto"
+      src="https://www.youtube.com/embed/nKdfx9wM9BQ"
+      title="Water Conservation Video"
+      allow="autoplay; encrypted-media"
+      allowFullScreen
+      initial={{ y: 20, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ delay: 0.2, duration: 0.6 }}
+      aria-label="Water conservation YouTube video"
+    />
+    <motion.p
+      className="text-gray-600 text-lg mb-8 "
+      initial={{ y: 20, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ delay: 0.4, duration: 0.6 }}
+    >
+      See how Jal Sahelis conserving water in their unique way.
+    </motion.p>
+    <motion.button
+      className="bg-emerald-600 text-white px-6 py-3 rounded-lg hover:bg-emerald-700 transition-colors duration-300"
+      // onClick={onComplete}
+      initial={{ scale: 0.8, opacity: 0 }}
+      animate={{ scale: 1, opacity: 1 }}
+      transition={{ delay: 0.6, duration: 0.6 }}
+      aria-label="Continue to BlueDrop Tracker"
+    >
+      Continue
+    </motion.button>
+  </div>
+</motion.div>
       </div>
+      
     </section>
   );
 };

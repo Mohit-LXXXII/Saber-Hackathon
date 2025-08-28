@@ -6,28 +6,28 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 // Water-themed carousel data from SaveWater document
 const carouselItems = [
   {
-    image: '/images/shower.jpg',
+    image: 'https://media.istockphoto.com/id/1368214406/photo/water-running-from-a-black-rain-shower-head.jpg?s=612x612&w=0&k=20&c=fBIC-HqnXRnAoJzKt5M9-0cxlQY5xyy9Ckep_feWFfc=',
     title: 'Shower',
     caption: '10-minute shower ≈ 25 gal',
-    fallbackImage: '/images/fallback-water.jpg',
+    fallbackImage: 'https://i.pinimg.com/1200x/03/e1/82/03e1820a0191e42eccbf85815f6cf34c.jpg',
   },
   {
-    image: '/images/brushing.jpg',
+    image: 'https://i.pinimg.com/1200x/3e/94/b7/3e94b796dbca24bc0e632a4063041844.jpg',
     title: 'Brushing',
     caption: 'Brushing (tap on) ≈ 4 gal',
     fallbackImage: '/images/fallback-water.jpg',
   },
   {
-    image: '/images/dishwasher.jpg',
+    image: 'https://i.pinimg.com/1200x/83/2d/ba/832dba0d27bbbb68d3e53d2d517f65e8.jpg',
     title: 'Dishwasher',
     caption: 'Dishwasher load ≈ 6 gal',
-    fallbackImage: '/images/fallback-water.jpg',
+    fallbackImage: 'https://i.pinimg.com/1200x/83/2d/ba/832dba0d27bbbb68d3e53d2d517f65e8.jpg',
   },
   {
-    image: '/images/washing-machine.jpg',
+    image: 'https://i.pinimg.com/1200x/c0/c5/45/c0c5455f513dc112fc04b5d85cc2aff3.jpg',
     title: 'Washing Machine',
     caption: 'Washing machine ≈ 25 gal',
-    fallbackImage: '/images/fallback-water.jpg',
+    fallbackImage: '',
   },
 ];
 

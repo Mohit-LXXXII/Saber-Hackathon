@@ -197,14 +197,12 @@ const Header = () => {
           Contact
         </NavLink>
       </div>
-      <Button
-        className="md:hidden"
-        variant="contained"
-        sx={{ height: 40, backgroundColor: 'white', color: '#059669', '&:hover': { backgroundColor: '#f0f0f0' }, minWidth: '40px' }}
-        onClick={() => setIsMenuOpen(!isMenuOpen)}
-      >
-        ☰
-      </Button>
+      <button
+  className="sm:hidden h-10 min-w-[40px] bg-white text-emerald-600 hover:bg-gray-100 rounded px-2"
+  onClick={() => setIsMenuOpen(!isMenuOpen)}
+>
+  ☰
+</button>
       <Button
         className="hidden md:block"
         variant="contained"

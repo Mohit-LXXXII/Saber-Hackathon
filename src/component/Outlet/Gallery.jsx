@@ -99,7 +99,7 @@ const Gallery = () => {
           <motion.div
             className="w-full md:w-[50%] bg-cover bg-center rounded-xl shadow-md hover:scale-105 transition-transform duration-300"
             style={{
-              backgroundImage: `url("https://5.imimg.com/data5/RT/UJ/MY-5455890/real-time-water-quality-monitoring-system--500x500.jpg")`,
+              backgroundImage: `url("https://i.pinimg.com/736x/16/59/d3/1659d31ac78aa267e53b803aeb0659d4.jpg")`,
             }}
             initial={{ opacity: 0, translateX: 50 }}
             animate={isTopSectionVisible ? { opacity: 1, translateX: 0 } : {}}
@@ -141,6 +141,10 @@ const Gallery = () => {
           />
         </div>
       </motion.div>
+
+
+
+      
     </section>
   );
 };

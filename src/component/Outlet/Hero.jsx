@@ -172,7 +172,7 @@ const Hero = () => {
         <motion.div
           className="h-full bg-cover bg-center rounded-2xl shadow-md hover:scale-105 transition-transform duration-300"
           style={{
-            backgroundImage: `url("https://images.alphacoders.com/739/73931.jpg")`,
+            backgroundImage: `url("https://i.pinimg.com/736x/2a/7b/6c/2a7b6c5d81859d2d2e06fca4dc985093.jpg")`,
           }}
           initial={{ opacity: 0, translateY: 50 }}
           animate={isCardsVisible ? { opacity: 1, translateY: 0 } : {}}
@@ -187,7 +187,7 @@ const Hero = () => {
           <motion.div
             className="h-64 bg-cover bg-center rounded-2xl shadow-md hover:scale-105 transition-transform duration-300"
             style={{
-              backgroundImage: `url("https://tse1.mm.bing.net/th/id/OIP.grjtVHUTZyT7jutyMPmf6wHaEo?r=0&rs=1&pid=ImgDetMain&o=7&rm=3")`,
+              backgroundImage: `url("https://i.pinimg.com/1200x/f3/c9/53/f3c953454a4597cf20ff4821e0733a19.jpg")`,
             }}
             initial={{ opacity: 0, translateX: 50 }}
             animate={isCardsVisible ? { opacity: 1, translateX: 0 } : {}}
