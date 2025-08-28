@@ -6,42 +6,6 @@ BlueDrop Tracker is a web application designed to promote water conservation by 
 
 Table of Contents
 
-
-
-
-
-Features
-
-
-
-Tech Stack
-
-
-
-Installation
-
-
-
-Usage
-
-
-
-Team
-
-
-
-Live Demo
-
-
-
-License
-
-Features
-
-
-
-
-
 Home Page: A welcoming landing page with an overview of the app’s purpose and motivational content to encourage water conservation.
 
 
