@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
+import Carousel from './Carousal';
 
 // Water-themed data for the animated stats section
 const waterStats = [
@@ -140,6 +141,7 @@ const Hero = () => {
         ))}
       </motion.div>
 
+        <Carousel/>
       {/* Images and Stats Section */}
       <div className="w-full max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6" ref={cardsRef}>
         <motion.div

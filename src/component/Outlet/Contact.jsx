@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import { TextField, Button, Typography, Box } from '@mui/material';
 import axios from 'axios';
 

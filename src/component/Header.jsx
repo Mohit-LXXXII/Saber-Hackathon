@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { Button, TextField, Typography, Box, Divider } from '@mui/material';
 import AcUnitIcon from '@mui/icons-material/AcUnit';
 import { createPortal } from 'react-dom';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'motion/react';
 
 const Modal = ({ isOpen, onClose }) => {
   // State for water tracker inputs
