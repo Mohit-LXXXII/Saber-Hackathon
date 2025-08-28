@@ -104,42 +104,42 @@ const Hero = () => {
 
       {/* Animated Stats Section */}
       <motion.div
-        className="w-full max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mb-12 relative"
-        ref={statsRef}
-      >
-        {/* Wave Background */}
-        <motion.div
-          className="absolute inset-0 -z-10"
-          style={{
-            background: 'linear-gradient(180deg, rgba(59, 130, 246, 0.2), rgba(59, 130, 246, 0.1))',
-            clipPath: 'path("M0,160L80,186.7C160,213,320,267,480,266.7C640,267,800,213,960,186.7C1120,160,1280,160,1360,160L1440,160L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z")',
-          }}
-          initial={{ y: 50, opacity: 0 }}
-          animate={isStatsVisible ? { y: 0, opacity: 1 } : {}}
-          transition={{ duration: 1, ease: 'easeOut' }}
-        />
-        {waterStats.map(({ emoji, title, description, bgColor }, i) => (
-          <motion.div
-            key={i}
-            className="relative bg-white p-6 rounded-xl shadow-md flex flex-col items-center justify-center h-52 w-full text-center"
-            initial="offscreen"
-            whileInView="onscreen"
-            viewport={{ amount: 0.3 }}
-            variants={cardVariants}
-            drag
-            dragConstraints={{ left: -30, right: 30, top: -30, bottom: 30 }}
-            dragElastic={0.3}
-            whileHover={{ scale: 1.05 }}
-            whileDrag={{ scale: 1.1 }}
-            transition={{ duration: 0.5, delay: i * 0.2 }}
-          >
-            <div className={`absolute inset-0 rounded-xl opacity-20 bg-gradient-to-r ${bgColor}`} />
-            <span className="text-5xl mb-3">{emoji}</span>
-            <h3 className="text-lg font-semibold text-gray-800">{title}</h3>
-            <p className="text-sm text-gray-600 mt-2">{description}</p>
-          </motion.div>
-        ))}
-      </motion.div>
+  className="w-full max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mb-12 relative"
+  ref={statsRef}
+>
+  {/* Wave Background */}
+  <motion.div
+    className="absolute inset-0 -z-10"
+    style={{
+      background: 'linear-gradient(180deg, rgba(59, 130, 246, 0.2), rgba(59, 130, 246, 0.1))',
+      clipPath: 'path("M0,160L80,186.7C160,213,320,267,480,266.7C640,267,800,213,960,186.7C1120,160,1280,160,1360,160L1440,160L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z")',
+    }}
+    initial={{ y: 50, opacity: 0 }}
+    animate={isStatsVisible ? { y: 0, opacity: 1 } : {}}
+    transition={{ duration: 1, ease: 'easeOut' }}
+  />
+
+  {waterStats.map(({ emoji, title, description, bgColor }, i) => (
+    <motion.div
+      key={i}
+      className="relative bg-white p-6 rounded-xl shadow-md flex flex-col items-center justify-center h-52 w-full text-center"
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.3 }} // ✅ runs only once
+      transition={{ duration: 0.5, ease: "easeOut", delay: i * 0.15 }}
+      drag
+      dragConstraints={{ left: -20, right: 20, top: -20, bottom: 20 }}
+      dragElastic={0.1}
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.98 }}
+    >
+      <div className={`absolute inset-0 rounded-xl opacity-20 bg-gradient-to-r ${bgColor}`} />
+      <span className="text-5xl mb-3">{emoji}</span>
+      <h3 className="text-lg font-semibold text-gray-800">{title}</h3>
+      <p className="text-sm text-gray-600 mt-2">{description}</p>
+    </motion.div>
+  ))}
+</motion.div>
 
         <Carousel/>
       {/* Images and Stats Section */}
