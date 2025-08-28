@@ -7,27 +7,41 @@ import IncompleteCircleIcon from '@mui/icons-material/IncompleteCircle';
 import OilBarrelIcon from '@mui/icons-material/OilBarrel';
 
 const About = () => {
-  // State to control animation trigger
+  // State to control animation triggers
   const [isVisible, setIsVisible] = useState(false);
+  const [isWaterFactsVisible, setIsWaterFactsVisible] = useState(false);
   const sectionRef = useRef(null);
+  const waterFactsRef = useRef(null);
 
-  // Intersection Observer to detect when section is in view
+  // Intersection Observer to detect when sections are in view
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
-          observer.disconnect(); // Run animation only once
+          observer.disconnect(); // Run animation only once for trusted by
         }
       },
       { threshold: 0.3 } // Trigger when 30% of section is visible
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
+    const waterFactsObserver = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsWaterFactsVisible(true);
+          waterFactsObserver.disconnect(); // Run animation only once for water facts
+        }
+      },
+      { threshold: 0.3 }
+    );
 
-    return () => observer.disconnect();
+    if (sectionRef.current) observer.observe(sectionRef.current);
+    if (waterFactsRef.current) waterFactsObserver.observe(waterFactsRef.current);
+
+    return () => {
+      observer.disconnect();
+      waterFactsObserver.disconnect();
+    };
   }, []);
 
   // Trusted By items array
@@ -77,7 +91,7 @@ const About = () => {
       </div>
 
       {/* Features Section */}
-      <div className="w-full max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="w-full max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
         {/* Feature 1 */}
         <div className="flex flex-col sm:flex-row gap-4 items-center bg-white p-6 rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300">
           <div
@@ -140,6 +154,90 @@ const About = () => {
               Track and measure the impact of water conservation efforts globally with comprehensive data dashboards.
             </p>
           </div>
+        </div>
+      </div>
+
+      {/* Water Facts Section */}
+      <div className="relative w-full max-w-6xl mx-auto py-16 px-6" ref={waterFactsRef}>
+        {/* Decorative wave background */}
+        <div className="absolute inset-0 -z-10">
+          <div className="h-64 w-full bg-gradient-to-b from-[#0d9488]/60 to-[#059669]/20 clip-path-wave"></div>
+        </div>
+
+        {/* Section Title */}
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-800">Water Facts 💧</h2>
+          <p className="text-gray-600 mt-2">Discover some refreshing insights</p>
+        </div>
+
+        {/* Cards Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+          <motion.div
+            className="relative group bg-white rounded-2xl p-8 shadow-lg overflow-hidden hover:shadow-2xl transition"
+            initial={{ opacity: 0, translateY: 50 }}
+            animate={isWaterFactsVisible ? { opacity: 1, translateY: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-[#0d9488] to-[#059669] opacity-20 group-hover:opacity-30 transition"></div>
+            <span className="text-6xl block mb-4">💧</span>
+            <h3 className="text-xl font-semibold text-gray-800">Hydration</h3>
+            <p className="text-gray-600 mt-2 text-sm">Your body is 60% water. Staying hydrated helps everything from focus to fitness.</p>
+          </motion.div>
+          <motion.div
+            className="relative group bg-white rounded-2xl p-8 shadow-lg overflow-hidden hover:shadow-2xl transition"
+            initial={{ opacity: 0, translateY: 50 }}
+            animate={isWaterFactsVisible ? { opacity: 1, translateY: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-[#34d399] to-[#10b981] opacity-20 group-hover:opacity-30 transition"></div>
+            <span className="text-6xl block mb-4">🌊</span>
+            <h3 className="text-xl font-semibold text-gray-800">Oceans</h3>
+            <p className="text-gray-600 mt-2 text-sm">Oceans cover 71% of Earth, producing over half of the world’s oxygen.</p>
+          </motion.div>
+          <motion.div
+            className="relative group bg-white rounded-2xl p-8 shadow-lg overflow-hidden hover:shadow-2xl transition"
+            initial={{ opacity: 0, translateY: 50 }}
+            animate={isWaterFactsVisible ? { opacity: 1, translateY: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.6 }}
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-[#a78bfa] to-[#8b5cf6] opacity-20 group-hover:opacity-30 transition"></div>
+            <span className="text-6xl block mb-4">❄️</span>
+            <h3 className="text-xl font-semibold text-gray-800">Ice & Snow</h3>
+            <p className="text-gray-600 mt-2 text-sm">About 68% of Earth’s freshwater is locked in ice caps and glaciers.</p>
+          </motion.div>
+          <motion.div
+            className="relative group bg-white rounded-2xl p-8 shadow-lg overflow-hidden hover:shadow-2xl transition"
+            initial={{ opacity: 0, translateY: 50 }}
+            animate={isWaterFactsVisible ? { opacity: 1, translateY: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.8 }}
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-[#f59e0b] to-[#f97316] opacity-20 group-hover:opacity-30 transition"></div>
+            <span className="text-6xl block mb-4">☀️</span>
+            <h3 className="text-xl font-semibold text-gray-800">Evaporation</h3>
+            <p className="text-gray-600 mt-2 text-sm">The water cycle evaporates 1,000 cubic km of water each year.</p>
+          </motion.div>
+          <motion.div
+            className="relative group bg-white rounded-2xl p-8 shadow-lg overflow-hidden hover:shadow-2xl transition"
+            initial={{ opacity: 0, translateY: 50 }}
+            animate={isWaterFactsVisible ? { opacity: 1, translateY: 0 } : {}}
+            transition={{ duration: 0.8, delay: 1.0 }}
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-[#f472b6] to-[#ec4899] opacity-20 group-hover:opacity-30 transition"></div>
+            <span className="text-6xl block mb-4">🚰</span>
+            <h3 className="text-xl font-semibold text-gray-800">Access</h3>
+            <p className="text-gray-600 mt-2 text-sm">Over 2 billion people still lack access to safe drinking water.</p>
+          </motion.div>
+          <motion.div
+            className="relative group bg-white rounded-2xl p-8 shadow-lg overflow-hidden hover:shadow-2xl transition"
+            initial={{ opacity: 0, translateY: 50 }}
+            animate={isWaterFactsVisible ? { opacity: 1, translateY: 0 } : {}}
+            transition={{ duration: 0.8, delay: 1.2 }}
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-[#6b7280] to-[#4b5563] opacity-20 group-hover:opacity-30 transition"></div>
+            <span className="text-6xl block mb-4">🌧️</span>
+            <h3 className="text-xl font-semibold text-gray-800">Rain</h3>
+            <p className="text-gray-600 mt-2 text-sm">Each year, about 505,000 cubic km of water falls as precipitation worldwide.</p>
+          </motion.div>
         </div>
       </div>
     </section>
