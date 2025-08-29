@@ -105,6 +105,7 @@ const Gallery = () => {
             className="w-full md:w-[50%] bg-cover bg-center rounded-xl shadow-md hover:scale-105 transition-transform duration-300"
             style={{
               backgroundImage: `url("https://i.pinimg.com/736x/16/59/d3/1659d31ac78aa267e53b803aeb0659d4.jpg")`,
+
             }}
             initial={{ opacity: 0, translateX: 50 }}
             animate={isTopSectionVisible ? { opacity: 1, translateX: 0 } : {}}
@@ -121,38 +122,53 @@ const Gallery = () => {
   transition={{ duration: 0.8 }}
 >
   <div
-    className="flex flex-col sm:flex-row justify-around p-4 h-[20vmin] sm:h-[50vmin] gap-4 rounded-xl"
+    className="flex mx-auto flex-col sm:flex-row justify-around p-4 h-[20vmin] sm:h-[50vmin] gap-4 rounded-xl"
     ref={bottomSectionRef}
   >
+    {/* Water drop */}
     <motion.div
-      className="w-full sm:w-[33%] bg-cover bg-center rounded-xl shadow-md hover:scale-105 transition-transform duration-300"
-      style={{
-        backgroundImage: `url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80")`, // Water drop
-      }}
+      className="w-full sm:w-[33%] rounded-xl shadow-md hover:scale-105 transition-transform duration-300 overflow-hidden"
       initial={{ opacity: 0, scale: 0.9 }}
       animate={isBottomSectionVisible ? { opacity: 1, scale: 1 } : {}}
       transition={{ duration: 0.8, delay: 0.2 }}
-    />
+    >
+      <img
+        src="https://i.pinimg.com/736x/61/9e/e6/619ee6cab7bb089c27559dfdd7aaeafe.jpg"
+        alt="Water drop"
+        className="w-full h-full object-cover rounded-xl"
+      />
+    </motion.div>
+
+    {/* Ocean */}
     <motion.div
-      className="w-full sm:w-[33%] bg-cover bg-center rounded-xl shadow-md hover:scale-105 transition-transform duration-300"
-      style={{
-        backgroundImage: `url("https://images.unsplash.com/photo-1505455184862-554a3b3e18eb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80")`, // Ocean
-      }}
+      className="w-full sm:w-[33%] rounded-xl shadow-md hover:scale-105 transition-transform duration-300 overflow-hidden"
       initial={{ opacity: 0, scale: 0.9 }}
       animate={isBottomSectionVisible ? { opacity: 1, scale: 1 } : {}}
       transition={{ duration: 0.8, delay: 0.4 }}
-    />
+    >
+      <img
+        src="https://media.licdn.com/dms/image/v2/D4D12AQFSdO8R2VTmYA/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1721195892439?e=2147483647&v=beta&t=9cDaj9JWegpiRlR-GAvsg63xJSccb3bCLrpERbmfLHM"
+        alt="Ocean"
+        className="w-full h-full object-cover rounded-xl"
+      />
+    </motion.div>
+
+    {/* Glacier */}
     <motion.div
-      className="w-full sm:w-[33%] bg-cover bg-center rounded-xl shadow-md hover:scale-105 transition-transform duration-300"
-      style={{
-        backgroundImage: `url("https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Glacier_Bay_National_Park%2C_Alaska.jpg/1280px-Glacier_Bay_National_Park%2C_Alaska.jpg")`, // Glacier
-      }}
+      className="w-full sm:w-[33%] rounded-xl shadow-md hover:scale-105 transition-transform duration-300 overflow-hidden"
       initial={{ opacity: 0, scale: 0.9 }}
       animate={isBottomSectionVisible ? { opacity: 1, scale: 1 } : {}}
       transition={{ duration: 0.8, delay: 0.6 }}
-    />
+    >
+      <img
+        src="https://sm.pcmag.com/pcmag_uk/review/p/pani-smart/pani-smart-water-monitor_xder.jpg"
+        alt="Glacier"
+        className="w-full h-full object-cover rounded-xl"
+      />
+    </motion.div>
   </div>
 </motion.div>
+
 
       {/* New Card Section */}
       <motion.div
