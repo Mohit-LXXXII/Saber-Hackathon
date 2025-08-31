@@ -27,3 +27,15 @@ dist-ssr
 ".env" 
 ".env" 
 ".env" 
+
+# Spring Boot
+target/
+!.gitignore
+*.class
+*.log
+# IDE
+.idea/
+*.iml
+# Maven/Gradle
+.m2/
+build/

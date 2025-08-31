@@ -147,7 +147,7 @@ const Gallery = () => {
       transition={{ duration: 0.8, delay: 0.4 }}
     >
       <img
-        src="https://media.licdn.com/dms/image/v2/D4D12AQFSdO8R2VTmYA/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1721195892439?e=2147483647&v=beta&t=9cDaj9JWegpiRlR-GAvsg63xJSccb3bCLrpERbmfLHM"
+        src="https://i.pinimg.com/1200x/54/0f/16/540f1669b741ed4ffd0adc0e6583945c.jpg"
         alt="Ocean"
         className="w-full h-full object-cover rounded-xl"
       />
